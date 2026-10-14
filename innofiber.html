@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Innofiber | Jonah Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== MENU BAR (same on every page) ===== -->
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html">Jonah Wang</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="innofiber.html" aria-current="page">Innofiber</a></li>
+          <li><a href="photography.html">Photography</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-intro">
+      <h1>Innofiber</h1>
+      <p class="role">KPO Engineering Intern, <span class="placeholder">[ADD START MONTH YEAR]</span> to present</p>
+    </div>
+
+    <div class="doc">
+
+      <!-- ===== SIDE MENU =====
+           Each link's href="#..." must match a section's id="..." below.
+           To add a project: add a new <li> line here AND a new <section> below. -->
+      <nav class="toc" aria-label="Projects on this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#overview" class="active">My role</a></li>
+          <li><a href="#eo-tool">E&amp;O Analysis Tool</a></li>
+          <li><a href="#label-kanban">Shipping Label Kanban</a></li>
+          <li><a href="#accomplishment-walk">Accomplishment Walk</a></li>
+        </ol>
+      </nav>
+
+      <div class="doc-content">
+
+        <!-- ===================== MY ROLE ===================== -->
+        <section id="overview">
+          <h2>My role</h2>
+          <p>At Innofiber, I'm the Kaizen Promotion Office (KPO) Engineering Intern. I analyze problems in and around our flow lines and develop solutions that cut waste and cycle time so production can keep pace with takt time.</p>
+          <p>Innofiber manufactures fiber optic cables for industrial and medical applications and works with OEMs to develop their cables and determine how manufacturable they are. Part of my role is designing and building workstations and carts out of Creform/FlexPipe, a modular pipe-and-joint system, so each one fits the ergonomics of the operator who uses it.</p>
+          <figure>
+            <img src="images/me.jpeg" alt="Jonah at Innofiber">
+            <figcaption><span class="placeholder">[ADD a short caption, e.g. what you're doing in this photo]</span></figcaption>
+          </figure>
+        </section>
+
+        <!-- ===================== SAMPLE 1: E&O TOOL ===================== -->
+        <section id="eo-tool">
+          <h2>E&amp;O Analysis Tool</h2>
+          <p class="tagline">Finding thousands of unused parts so they stop getting in the way of kitting.</p>
+
+          <h3>What</h3>
+          <p>Innofiber had no way to tell whether a part would ever be consumed again once the assemblies (bills of materials) that used it were completed. Those excess and obsolete (E&amp;O) parts stayed in active stock, where they could be pulled by mistake during assembly and kitting. I was tasked with finding them and getting them out of the way.</p>
+
+          <h3>How</h3>
+          <p>I started with almost no knowledge of how Fishbowl, our inventory system, stores its data, or of SQL, the language its Data feature uses to query it. After teaching myself the basics, I wrote queries to pull sales order history, active and inactive BOMs, and every inventoried part, each formatted for Excel. I then wrote a VBA macro that combines those exports and flags every part that hasn't been consumed through a sales order within a chosen range of years.</p>
+
+          <figure>
+            <ol class="flow">
+              <li><strong>Query</strong>SQL pulls sales orders, BOMs, and parts from Fishbowl</li>
+              <li><strong>Export</strong>Each result is formatted as an Excel sheet</li>
+              <li><strong>Combine</strong>A VBA macro merges the sheets and checks consumption</li>
+              <li><strong>Flag</strong>Parts with no sales-order use in the chosen years are listed</li>
+            </ol>
+            <figcaption>Figure 1. How the tool turns raw Fishbowl data into a list of excess parts.</figcaption>
+          </figure>
+
+          <p><span class="placeholder">[ADD one problem you ran into, e.g. messy or duplicate data, matching up the different exports, or deciding what counts as "dead", and how you solved it.]</span></p>
+
+          <h3>Why</h3>
+          <p>The tool has flagged <strong>more than 2,000 parts</strong> that meet the criteria, and <strong>about 21%</strong> of them have already been relocated <span class="placeholder">[ADD where, e.g. out of active kitting areas]</span>, reducing the dead inventory that complicates kitting. <span class="placeholder">[ADD next steps, e.g. working through the rest of the list.]</span></p>
+
+          <div class="skills">
+            <p><strong>Skills used:</strong> SQL, Fishbowl Data queries, Excel, VBA, data analysis, and learning a new system quickly.</p>
+          </div>
+        </section>
+
+        <!-- ===================== SAMPLE 2: LABEL KANBAN ===================== -->
+        <section id="label-kanban">
+          <h2>Shipping Label Kanban System</h2>
+          <p class="tagline">A physical trigger that tells procurement when shipping is down to its last roll, with no extra steps for operators.</p>
+
+          <h3>What</h3>
+          <p>Shipping applies a label to the packaging of every individual assembly that leaves Innofiber, so these labels are bought and used in bulk. When the labels were removed from the bills of materials, their consumption stopped being tracked anywhere. Procurement had no signal that labels were running low, so shipping would run out before anyone knew to reorder, and requests arrived as last-minute complaints.</p>
+
+          <h3>How</h3>
+          <p>I designed and built a fixture that fits the inner diameter of a label roll and carries a QR code, then placed it in the last roll on the shelf. To use that roll, an operator has to remove the fixture first. Scanning codes is already a routine part of the shipping role, so operators scan it out of habit rather than as an extra task. The scan fills out the company-wide part request form, built by our automation engineer, and a Microsoft Power Automate flow I set up routes the request to procurement with an email to the purchasing department.</p>
+
+          <!-- If the photos show up in the wrong order for these captions, swap the two file names. -->
+          <div class="figure-pair">
+            <figure>
+              <img src="images/kanbanfixture_1.jpeg" alt="Kanban fixture seated in the core of a label roll">
+              <figcaption>Figure 2. The fixture seated in the core of the last label roll.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/kanbanfixture_2.jpeg" alt="Label rolls stored in a red shipping bin">
+              <figcaption>Figure 3. Label rolls in the shipping bin; the fixture marks the final roll.</figcaption>
+            </figure>
+          </div>
+
+          <p><span class="placeholder">[ADD one problem you ran into, e.g. fixture fit or redesigns, or getting operators to scan, and how you solved it.]</span></p>
+
+          <h3>Why</h3>
+          <p>Since the system went live, shipping hasn't had a single label shortage or complaint. Because these labels go on every assembly we ship, keeping them in stock keeps shipments moving. <span class="placeholder">[ADD a number if you have one, e.g. how often shortages happened before or how many rolls you go through.]</span></p>
+
+          <div class="skills">
+            <p><strong>Skills used:</strong> Lean manufacturing (kanban), fixture design and rapid prototyping, Microsoft Power Automate, designing around operator habits, and coordinating between shipping and procurement.</p>
+          </div>
+        </section>
+
+        <!-- ===================== ACCOMPLISHMENT WALK ===================== -->
+        <section id="accomplishment-walk">
+          <h2>Accomplishment Walk</h2>
+          <p class="tagline"><span class="placeholder">[ADD a one-line summary of this project]</span></p>
+          <figure>
+            <img src="images/accomplishmentwalk_drawing.jpeg" alt="Drawing for the accomplishment walk">
+            <figcaption>Figure 4. <span class="placeholder">[ADD caption]</span></figcaption>
+          </figure>
+          <p><span class="placeholder">[ADD a short description of this project when you're ready.]</span></p>
+        </section>
+
+        <!-- ===== TEMPLATE FOR A NEW PROJECT =====
+             1. Copy everything between <section ...> and </section> below (remove the comment marks).
+             2. Give it a unique id, e.g. id="my-new-project".
+             3. Add a matching link to the side menu: <li><a href="#my-new-project">My New Project</a></li>
+
+        <section id="my-new-project">
+          <h2>Project title</h2>
+          <p class="tagline">One-line summary.</p>
+          <h3>What</h3>
+          <p>The problem and why it mattered.</p>
+          <h3>How</h3>
+          <p>What you did, the tools you used, and a problem you overcame.</p>
+          <figure>
+            <img src="images/your-image.jpeg" alt="Describe the image">
+            <figcaption>Figure 5. Caption.</figcaption>
+          </figure>
+          <h3>Why</h3>
+          <p>The result, with a number if possible.</p>
+          <div class="skills"><p><strong>Skills used:</strong> ...</p></div>
+        </section>
+        -->
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="inner">
+      <span>Jonah Wang</span>
+      <span>
+        <a href="mailto:wang.jonah1@northeastern.edu">wang.jonah1@northeastern.edu</a>
+        <!-- LINKEDIN: replace # with your LinkedIn profile URL -->
+        &nbsp;|&nbsp; <a href="#">LinkedIn</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Highlights the side-menu item for the section you're reading. No need to edit. -->
+  <script>
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+      if (!links.length || !('IntersectionObserver' in window)) return;
+      var byId = {};
+      links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+
+      function activate(link) {
+        links.forEach(function (a) { a.classList.remove('active'); a.removeAttribute('aria-current'); });
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'true');
+        var list = link.closest('ol');
+        if (list && list.scrollWidth > list.clientWidth) {
+          list.scrollTo({ left: link.parentElement.offsetLeft - list.offsetLeft - 16, behavior: 'smooth' });
+        }
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && byId[entry.target.id]) activate(byId[entry.target.id]);
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+
+      Object.keys(byId).forEach(function (id) {
+        var section = document.getElementById(id);
+        if (section) observer.observe(section);
+      });
+    })();
+  </script>
+
+</body>
+</html>
