@@ -9,13 +9,13 @@
 
 :root {
   color-scheme: dark;
-  --bg: #15140F;        /* deep olive-black, like the shaded pond water */
-  --surface: #1F1D17;   /* header, footer, boxes: one step lighter */
-  --ink: #EDE6D6;       /* main text, warm off-white */
-  --muted: #A8A08B;     /* secondary text, warm grey */
-  --line: #37342B;      /* borders and dividers */
-  --amber: #E0A33F;     /* the dragonfly: links, active markers, buttons */
-  --sage: #93A56F;      /* sunlit leaves: quieter structural accents */
+  --bg: #2B2620;        /* warm umber, like damp soil */
+  --surface: #38312A;   /* header, footer, boxes: one step lighter */
+  --ink: #F0E7D6;       /* main text, warm off-white */
+  --muted: #BCAE97;     /* secondary text, warm sand */
+  --line: #4D453B;      /* borders and dividers */
+  --amber: #D4844A;     /* main accent (rust): links, active markers, buttons */
+  --sage: #A3AC63;      /* second accent (olive): skills boxes, process steps */
   --font: "Ubuntu", Arial, "Helvetica Neue", Helvetica, sans-serif;
   --max: 1280px;
 }
@@ -116,15 +116,13 @@ main { max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
 .button.primary { background: var(--amber); border-color: var(--amber); color: var(--bg); }
 .button:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
-.about { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
-.about section { max-width: 40em; margin-bottom: 2.25rem; }
+.about { max-width: 46em; margin: 0 auto; }
+.about section { margin-bottom: 2.25rem; }
 .facts {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 1.5rem;
-  position: sticky;
-  top: 1.5rem;
 }
 .facts h2 { font-size: 1.3rem; }
 .facts dl { margin: 0; }
