@@ -16,8 +16,8 @@
   --line: #37342B;      /* borders and dividers */
   --amber: #E0A33F;     /* the dragonfly: links, active markers, buttons */
   --sage: #93A56F;      /* sunlit leaves: quieter structural accents */
-  --font: "Archivo", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  --max: 1120px;
+  --font: "Ubuntu", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --max: 1280px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -32,7 +32,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font);
-  font-size: 1.0625rem;
+  font-size: 1.1875rem;
   line-height: 1.65;
 }
 
@@ -94,13 +94,13 @@ main { max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
 /* ---------- Home / About Me ---------- */
 .hero {
   display: grid;
-  grid-template-columns: minmax(220px, 340px) 1fr;
+  grid-template-columns: minmax(240px, 400px) 1fr;
   gap: 3rem;
   align-items: center;
   margin-bottom: 3.5rem;
 }
 .hero img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; }
-.lede { font-size: 1.25rem; line-height: 1.55; max-width: 34em; }
+.lede { font-size: 1.4rem; line-height: 1.5; max-width: 32em; }
 
 .buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
 .button {
@@ -116,7 +116,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
 .button.primary { background: var(--amber); border-color: var(--amber); color: var(--bg); }
 .button:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
-.about { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start; }
+.about { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
 .about section { max-width: 40em; margin-bottom: 2.25rem; }
 .facts {
   background: var(--surface);
@@ -136,7 +136,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
 .page-intro { margin-bottom: 2.5rem; max-width: 46em; }
 .role { font-size: 1.15rem; color: var(--muted); margin-top: -0.25rem; }
 
-.doc { display: grid; grid-template-columns: 220px 1fr; gap: 3.5rem; align-items: start; }
+.doc { display: grid; grid-template-columns: 240px 1fr; gap: 3.5rem; align-items: start; }
 
 /* The side menu: a single line with a marker for each project.
    The marker turns amber for the section you are reading. */
@@ -190,7 +190,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
 /* ---------- Images and captions ---------- */
 figure { margin: 1.75rem 0; }
 figure img { width: 100%; border-radius: 6px; border: 1px solid var(--line); }
-figcaption { font-size: 0.93rem; line-height: 1.4; color: var(--muted); margin-top: 0.5rem; }
+figcaption { font-size: 1rem; line-height: 1.4; color: var(--muted); margin-top: 0.5rem; }
 .figure-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.75rem 0; }
 .figure-pair figure { margin: 0; }
 /* Crops the pair to matching squares. Delete this rule to show full, uncropped photos. */
@@ -205,7 +205,7 @@ figcaption { font-size: 0.93rem; line-height: 1.4; color: var(--muted); margin-t
   border-top: 4px solid var(--sage);
   border-radius: 4px;
   padding: 0.9rem;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   line-height: 1.4;
   color: var(--muted);
 }
