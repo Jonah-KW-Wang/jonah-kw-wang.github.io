@@ -31,7 +31,7 @@
 
     <div class="page-intro">
       <h1>Innofiber</h1>
-      <p class="role">KPO Engineering Intern, <span class="placeholder">[ADD START MONTH YEAR]</span> to present</p>
+      <p class="role">KPO Engineering Intern, <span class="placeholder">January 2026</span> to present</p>
     </div>
 
     <div class="doc">
@@ -54,11 +54,11 @@
         <!-- ===================== MY ROLE ===================== -->
         <section id="overview">
           <h2>My role</h2>
-          <p>At Innofiber, I'm the Kaizen Promotion Office (KPO) Engineering Intern. I analyze problems in and around our flow lines and develop solutions that cut waste and cycle time so production can keep pace with takt time.</p>
+          <p>At Innofiber, I'm the Kaizen Promotion Office (KPO) Engineering Intern. I analyze problems in and around our flow lines and develop solutions that cut waste and assembly time so production can keep pace with takt time.</p>
           <p>Innofiber manufactures fiber optic cables for industrial and medical applications and works with OEMs to develop their cables and determine how manufacturable they are. Part of my role is designing and building workstations and carts out of Creform/FlexPipe, a modular pipe-and-joint system, so each one fits the ergonomics of the operator who uses it.</p>
           <figure>
             <img src="images/me.jpeg" alt="Jonah at Innofiber">
-            <figcaption><span class="placeholder">[ADD a short caption, e.g. what you're doing in this photo]</span></figcaption>
+            <figcaption><span class="placeholder">Inspecting end tip of cable in development</span></figcaption>
           </figure>
         </section>
 
@@ -71,7 +71,7 @@
           <p>Innofiber had no way to tell whether a part would ever be consumed again once the assemblies (bills of materials) that used it were completed. Those excess and obsolete (E&amp;O) parts stayed in active stock, where they could be pulled by mistake during assembly and kitting. I was tasked with finding them and getting them out of the way.</p>
 
           <h3>How</h3>
-          <p>I started with almost no knowledge of how Fishbowl, our inventory system, stores its data, or of SQL, the language its Data feature uses to query it. After teaching myself the basics, I wrote queries to pull sales order history, active and inactive BOMs, and every inventoried part, each formatted for Excel. I then wrote a VBA macro that combines those exports and flags every part that hasn't been consumed through a sales order within a chosen range of years.</p>
+          <p>I started with almost no knowledge of how Fishbowl, our inventory system, stores its data, or of SQL, the language its Data feature uses to query it. After teaching myself the basics, I wrote queries to pull sales order history, active and inactive BOMs, and every inventoried part, each formatted for Excel. Each dataset aforementioned was thrown into an Excel file that, through a VBA macro, combines those exports and flags every part that hasn't been consumed.</p>
 
           <figure>
             <ol class="flow">
@@ -83,10 +83,10 @@
             <figcaption>Figure 1. How the tool turns raw Fishbowl data into a list of excess parts.</figcaption>
           </figure>
 
-          <p><span class="placeholder">[ADD one problem you ran into, e.g. messy or duplicate data, matching up the different exports, or deciding what counts as "dead", and how you solved it.]</span></p>
+          <p><span class="placeholder">Because Sales Order data is constantly changing/becoming bigger, there was a need for parts that used to be flagged as excess to be flagged as having new consumption and put back into stock. Thus, I added a new sheet in the master Excel file and a new function inside the VBA script to freeze the data and compare the new and old excess list. From this, a list of parts with their part numbers and location in the excess parts location were determined.</span></p>
 
           <h3>Why</h3>
-          <p>The tool has flagged <strong>more than 2,000 parts</strong> that meet the criteria, and <strong>about 21%</strong> of them have already been relocated <span class="placeholder">[ADD where, e.g. out of active kitting areas]</span>, reducing the dead inventory that complicates kitting. <span class="placeholder">[ADD next steps, e.g. working through the rest of the list.]</span></p>
+          <p>The tool has flagged <strong>more than 2,000 parts</strong> that meet the criteria, and <strong>about 21%</strong> of them have already been relocated to a specialty excess area in the mezzanine of the manufacturing floor, reducing the dead inventory that complicates kitting. This 21% represents the bulk of what has been found in the active kitting area and a push from the sales department is creating a definite list of these parts that can actually be discarded and take a loss on to continue pursuing continuous improvement. Additionally, this means the remaining parts are parts that don't have an active stock unlike what Fishbowl reports or, for a small percentage, are located on the manufacturing floor which in time will be relocated.</p>
 
           <div class="skills">
             <p><strong>Skills used:</strong> SQL, Fishbowl Data queries, Excel, VBA, data analysis, and learning a new system quickly.</p>
