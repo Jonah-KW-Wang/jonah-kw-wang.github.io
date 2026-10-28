@@ -55,7 +55,7 @@ h3 { font-size: 1.2rem; font-weight: 650; margin-top: 1.6em; }
 p { margin: 0 0 1em; }
 
 /* Amber highlight marks text you still need to fill in */
-.placeholder { background: #4A3A17; color: #F4DC9E; padding: 0 0.25em; border-radius: 3px; }
+.placeholder { background: #F3DDB4; color: #5A3410; padding: 0 0.25em; border-radius: 3px; }
 
 /* ---------- Header and navigation ---------- */
 .site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
@@ -178,6 +178,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
 
 .skills {
   background: var(--surface);
+  border: 1px solid var(--line);
   border-left: 4px solid var(--sage);
   border-radius: 0 4px 4px 0;
   padding: 0.9rem 1.1rem;
