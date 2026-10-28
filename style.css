@@ -8,14 +8,14 @@
    ========================================================= */
 
 :root {
-  color-scheme: dark;
-  --bg: #2B2620;        /* warm umber, like damp soil */
-  --surface: #38312A;   /* header, footer, boxes: one step lighter */
-  --ink: #F0E7D6;       /* main text, warm off-white */
-  --muted: #BCAE97;     /* secondary text, warm sand */
-  --line: #4D453B;      /* borders and dividers */
-  --amber: #D4844A;     /* main accent (rust): links, active markers, buttons */
-  --sage: #A3AC63;      /* second accent (olive): skills boxes, process steps */
+  color-scheme: light;
+  --bg: #D4D7CE;        /* pebble grey-green, the page background */
+  --surface: #F7F8F4;   /* header, footer, boxes: near-white */
+  --ink: #1E231F;       /* main text, deep green-black */
+  --muted: #535A52;     /* secondary text, heron grey */
+  --line: #B2B7AB;      /* borders and dividers */
+  --amber: #7C5318;     /* main accent (ochre): links, active markers, buttons */
+  --sage: #55724F;      /* second accent (pond green): skills boxes, process steps */
   --font: "Ubuntu", Arial, "Helvetica Neue", Helvetica, sans-serif;
   --max: 1280px;
 }
