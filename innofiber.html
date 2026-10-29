@@ -31,7 +31,7 @@
 
     <div class="page-intro">
       <h1>Innofiber</h1>
-      <p class="role">KPO Engineering Intern, <span class="placeholder">January 2026</span> to present</p>
+      <p class="role">KPO Engineering Intern, January 2026 to present</p>
     </div>
 
     <div class="doc">
@@ -58,7 +58,7 @@
           <p>Innofiber manufactures fiber optic cables for industrial and medical applications and works with OEMs to develop their cables and determine how manufacturable they are. Part of my role is designing and building workstations and carts out of Creform/FlexPipe, a modular pipe-and-joint system, so each one fits the ergonomics of the operator who uses it.</p>
           <figure>
             <img src="images/me.jpeg" alt="Jonah at Innofiber">
-            <figcaption><span class="placeholder">Inspecting end tip of cable in development</span></figcaption>
+            <figcaption>Inspecting end tip of cable in development</figcaption>
           </figure>
         </section>
 
@@ -67,10 +67,10 @@
           <h2>E&amp;O Analysis Tool</h2>
           <p class="tagline">Finding thousands of unused parts so they stop getting in the way of kitting.</p>
 
-          <h3>What</h3>
+          <h3>The Problem</h3>
           <p>Innofiber had no way to tell whether a part would ever be consumed again once the assemblies (bills of materials) that used it were completed. Those excess and obsolete (E&amp;O) parts stayed in active stock, where they could be pulled by mistake during assembly and kitting. I was tasked with finding them and getting them out of the way.</p>
 
-          <h3>How</h3>
+          <h3>My Approach</h3>
           <p>I started with almost no knowledge of how Fishbowl, our inventory system, stores its data, or of SQL, the language its Data feature uses to query it. After teaching myself the basics, I wrote queries to pull sales order history, active and inactive BOMs, and every inventoried part, each formatted for Excel. Each dataset aforementioned was thrown into an Excel file that, through a VBA macro, combines those exports and flags every part that hasn't been consumed.</p>
 
           <figure>
@@ -83,9 +83,9 @@
             <figcaption>Figure 1. How the tool turns raw Fishbowl data into a list of excess parts.</figcaption>
           </figure>
 
-          <p><span class="placeholder">Because Sales Order data is constantly changing/becoming bigger, there was a need for parts that used to be flagged as excess to be flagged as having new consumption and put back into stock. Thus, I added a new sheet in the master Excel file and a new function inside the VBA script to freeze the data and compare the new and old excess list. From this, a list of parts with their part numbers and location in the excess parts location were determined.</span></p>
+          <p>Because Sales Order data is constantly changing/becoming bigger, there was a need for parts that used to be flagged as excess to be flagged as having new consumption and put back into stock. Thus, I added a new sheet in the master Excel file and a new function inside the VBA script to freeze the data and compare the new and old excess list. From this, a list of parts with their part numbers and location in the excess parts location were determined.</p>
 
-          <h3>Why</h3>
+          <h3>The Results</h3>
           <p>The tool has flagged <strong>more than 2,000 parts</strong> that meet the criteria, and <strong>about 21%</strong> of them have already been relocated to a specialty excess area in the mezzanine of the manufacturing floor, reducing the dead inventory that complicates kitting. This 21% represents the bulk of what has been found in the active kitting area and a push from the sales department is creating a definite list of these parts that can actually be discarded and take a loss on to continue pursuing continuous improvement. Additionally, this means the remaining parts are parts that don't have an active stock unlike what Fishbowl reports or, for a small percentage, are located on the manufacturing floor which in time will be relocated.</p>
 
           <div class="skills">
@@ -93,18 +93,20 @@
           </div>
         </section>
 
+
+        
         <!-- ===================== SAMPLE 2: LABEL KANBAN ===================== -->
         <section id="label-kanban">
           <h2>Shipping Label Kanban System</h2>
           <p class="tagline">A physical trigger that tells procurement when shipping is down to its last roll, with no extra steps for operators.</p>
 
-          <h3>What</h3>
+          <h3>The Problem</h3>
           <p>Shipping applies a label to the packaging of every individual assembly that leaves Innofiber, so these labels are bought and used in bulk. When the labels were removed from the bills of materials, their consumption stopped being tracked anywhere. Procurement had no signal that labels were running low, so shipping would run out before anyone knew to reorder, and requests arrived as last-minute complaints.</p>
 
-          <h3>How</h3>
+          <h3>My Approach</h3>
           <p>I designed and built a fixture that fits the inner diameter of a label roll and carries a QR code, then placed it in the last roll on the shelf. To use that roll, an operator has to remove the fixture first. Scanning codes is already a routine part of the shipping role, so operators scan it out of habit rather than as an extra task. The scan fills out the company-wide part request form, built by our automation engineer, and a Microsoft Power Automate flow I set up routes the request to procurement with an email to the purchasing department.</p>
 
-          <!-- If the photos show up in the wrong order for these captions, swap the two file names. -->
+          <!-- ==== Kanban Figures ==== -->
           <div class="figure-pair">
             <figure>
               <img src="images/kanbanfixture_1.jpeg" alt="Kanban fixture seated in the core of a label roll">
@@ -112,14 +114,14 @@
             </figure>
             <figure>
               <img src="images/kanbanfixture_2.jpeg" alt="Label rolls stored in a red shipping bin">
-              <figcaption>Figure 3. Label rolls in the shipping bin; the fixture marks the final roll.</figcaption>
+              <figcaption>Figure 3. Testing optimal label roll configuration inside bin.</figcaption>
             </figure>
           </div>
 
-          <p><span class="placeholder">[ADD one problem you ran into, e.g. fixture fit or redesigns, or getting operators to scan, and how you solved it.]</span></p>
+          <p>For testing, an email was the only indication for shipping/procurement to know that shipping labels were needed to be purchased. Thus the entire system needed to move towards being implemented into the preexisting Innofiber "Part Request Form", the main tool purchasing used to understand company consumption. I changed major links inside the Power Automate Solution to use the "Parts Request Form" and created new QR codes with immbedded links to a pre-filled version of the "Parts Request Form".</p>
 
-          <h3>Why</h3>
-          <p>Since the system went live, shipping hasn't had a single label shortage or complaint. Because these labels go on every assembly we ship, keeping them in stock keeps shipments moving. <span class="placeholder">[ADD a number if you have one, e.g. how often shortages happened before or how many rolls you go through.]</span></p>
+          <h3>The Results</h3>
+          <p>Since the system went live, shipping hasn't had a single label shortage or complaint due to the minimum quantity being flagged as one entire roll. Because these labels go on every assembly we ship, keeping them in stock keeps shipments moving. Before this issue of running out of shipping labels had come up even when they were consumed through a BOM, but due to the average 6 week LEED time for labels this caused major issues.</p>
 
           <div class="skills">
             <p><strong>Skills used:</strong> Lean manufacturing (kanban), fixture design and rapid prototyping, Microsoft Power Automate, designing around operator habits, and coordinating between shipping and procurement.</p>
