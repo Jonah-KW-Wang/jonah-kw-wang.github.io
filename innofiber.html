@@ -67,9 +67,16 @@
           <h2>E&amp;O Analysis Tool</h2>
           <p class="tagline">Finding thousands of unused parts so they stop getting in the way of kitting.</p>
 
+          <!-- Excess List Screenshot -->
+          <figure>
+            <img src="images/EOAnalysis.jpeg" alt="E&amp;O analysis tool">
+            <figcaption>Figure 1. <span class="placeholder">[ADD caption]</span></figcaption>
+          </figure>
+
           <h3>The Problem</h3>
           <p>Innofiber had no way to tell whether a part would ever be consumed again once the assemblies (bills of materials) that used it were completed. Those excess and obsolete (E&amp;O) parts stayed in active stock, where they could be pulled by mistake during assembly and kitting. I was tasked with finding them and getting them out of the way.</p>
 
+          
           <h3>My Approach</h3>
           <p>I started with almost no knowledge of how Fishbowl, our inventory system, stores its data, or of SQL, the language its Data feature uses to query it. After teaching myself the basics, I wrote queries to pull sales order history, active and inactive BOMs, and every inventoried part, each formatted for Excel. Each dataset aforementioned was thrown into an Excel file that, through a VBA macro, combines those exports and flags every part that hasn't been consumed.</p>
 
@@ -80,11 +87,12 @@
               <li><strong>Combine</strong>A VBA macro merges the sheets and checks consumption</li>
               <li><strong>Flag</strong>Parts with no sales-order use in the chosen years are listed</li>
             </ol>
-            <figcaption>Figure 1. How the tool turns raw Fishbowl data into a list of excess parts.</figcaption>
+            <figcaption>Figure 2. How the tool turns raw Fishbowl data into a list of excess parts.</figcaption>
           </figure>
 
+          <!-- Issue that arose -->
           <p>Because Sales Order data is constantly changing/becoming bigger, there was a need for parts that used to be flagged as excess to be flagged as having new consumption and put back into stock. Thus, I added a new sheet in the master Excel file and a new function inside the VBA script to freeze the data and compare the new and old excess list. From this, a list of parts with their part numbers and location in the excess parts location were determined.</p>
-
+          
           <h3>The Results</h3>
           <p>The tool has flagged <strong>more than 2,000 parts</strong> that meet the criteria, and <strong>about 21%</strong> of them have already been relocated to a specialty excess area in the mezzanine of the manufacturing floor, reducing the dead inventory that complicates kitting. This 21% represents the bulk of what has been found in the active kitting area and a push from the sales department is creating a definite list of these parts that can actually be discarded and take a loss on to continue pursuing continuous improvement. Additionally, this means the remaining parts are parts that don't have an active stock unlike what Fishbowl reports or, for a small percentage, are located on the manufacturing floor which in time will be relocated.</p>
 
@@ -100,24 +108,37 @@
           <h2>Shipping Label Kanban System</h2>
           <p class="tagline">A physical trigger that tells procurement when shipping is down to its last roll, with no extra steps for operators.</p>
 
+           <div class="figure-pair">
+            <figure>
+              <img src="images/kanbanfixture_1.jpeg" alt="Kanban fixture seated in the core of a label roll">
+              <figcaption>Figure 3. The fixture seated in the core of the last label roll.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/kanbanfixture_2.jpeg" alt="Label rolls stored in a red shipping bin">
+              <figcaption>Figure 4. Testing optimal label roll configuration inside bin.</figcaption>
+            </figure>
+          </div>
+
           <h3>The Problem</h3>
           <p>Shipping applies a label to the packaging of every individual assembly that leaves Innofiber, so these labels are bought and used in bulk. When the labels were removed from the bills of materials, their consumption stopped being tracked anywhere. Procurement had no signal that labels were running low, so shipping would run out before anyone knew to reorder, and requests arrived as last-minute complaints.</p>
 
+          
           <h3>My Approach</h3>
           <p>I designed and built a fixture that fits the inner diameter of a label roll and carries a QR code, then placed it in the last roll on the shelf. To use that roll, an operator has to remove the fixture first. Scanning codes is already a routine part of the shipping role, so operators scan it out of habit rather than as an extra task. The scan fills out the company-wide part request form, built by our automation engineer, and a Microsoft Power Automate flow I set up routes the request to procurement with an email to the purchasing department.</p>
 
           <!-- ==== Kanban Figures ==== -->
           <div class="figure-pair">
             <figure>
-              <img src="images/kanbanfixture_1.jpeg" alt="Kanban fixture seated in the core of a label roll">
-              <figcaption>Figure 2. The fixture seated in the core of the last label roll.</figcaption>
+              <img src="images/childflow.jpeg" alt="Power Automate Flow that stores data in company spreadsheet and adjusts time zone">
+              <figcaption>Figure 5. Power Automate Flow that stores data in company spreadsheet and adjusts time zone.</figcaption>
             </figure>
             <figure>
-              <img src="images/kanbanfixture_2.jpeg" alt="Label rolls stored in a red shipping bin">
-              <figcaption>Figure 3. Testing optimal label roll configuration inside bin.</figcaption>
+              <img src="images/parentflow.jpeg" alt="Power Automate Flow that captures Form response and sends email to procurement">
+              <figcaption>Figure 6. Power Automate Flow that captures Form response and sends email to procurement.</figcaption>
             </figure>
           </div>
 
+          <!-- Difficulty that came across -->
           <p>For testing, an email was the only indication for shipping/procurement to know that shipping labels were needed to be purchased. Thus the entire system needed to move towards being implemented into the preexisting Innofiber "Part Request Form", the main tool purchasing used to understand company consumption. I changed major links inside the Power Automate Solution to use the "Parts Request Form" and created new QR codes with immbedded links to a pre-filled version of the "Parts Request Form".</p>
 
           <h3>The Results</h3>
@@ -127,39 +148,6 @@
             <p><strong>Skills used:</strong> Lean manufacturing (kanban), fixture design and rapid prototyping, Microsoft Power Automate, designing around operator habits, and coordinating between shipping and procurement.</p>
           </div>
         </section>
-
-        <!-- ===================== ACCOMPLISHMENT WALK ===================== -->
-        <section id="accomplishment-walk">
-          <h2>Accomplishment Walk</h2>
-          <p class="tagline"><span class="placeholder">[ADD a one-line summary of this project]</span></p>
-          <figure>
-            <img src="images/accomplishmentwalk_drawing.jpeg" alt="Drawing for the accomplishment walk">
-            <figcaption>Figure 4. <span class="placeholder">[ADD caption]</span></figcaption>
-          </figure>
-          <p><span class="placeholder">[ADD a short description of this project when you're ready.]</span></p>
-        </section>
-
-        <!-- ===== TEMPLATE FOR A NEW PROJECT =====
-             1. Copy everything between <section ...> and </section> below (remove the comment marks).
-             2. Give it a unique id, e.g. id="my-new-project".
-             3. Add a matching link to the side menu: <li><a href="#my-new-project">My New Project</a></li>
-
-        <section id="my-new-project">
-          <h2>Project title</h2>
-          <p class="tagline">One-line summary.</p>
-          <h3>What</h3>
-          <p>The problem and why it mattered.</p>
-          <h3>How</h3>
-          <p>What you did, the tools you used, and a problem you overcame.</p>
-          <figure>
-            <img src="images/your-image.jpeg" alt="Describe the image">
-            <figcaption>Figure 5. Caption.</figcaption>
-          </figure>
-          <h3>Why</h3>
-          <p>The result, with a number if possible.</p>
-          <div class="skills"><p><strong>Skills used:</strong> ...</p></div>
-        </section>
-        -->
 
       </div>
     </div>
