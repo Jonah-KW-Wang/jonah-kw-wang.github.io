@@ -290,3 +290,36 @@ figcaption { font-size: 1rem; line-height: 1.4; color: var(--muted); margin-top:
   .figure-pair, .flow { grid-template-columns: 1fr; }
   .contact-list li { grid-template-columns: 1fr; gap: 0.25rem; }
 }
+
+/* ---------- Home page: background photo behind the intro only ---------- */
+/* To change the photo, upload a new one and update the file name below. */
+body.home { overflow-x: clip; }
+.home main { padding-top: 0; }
+.home .hero {
+  position: relative;
+  isolation: isolate;
+  padding: 3.5rem 0;
+}
+.home .hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  background: var(--bg) url("images/home_background.jpg") center / cover no-repeat;
+  border-bottom: 1px solid var(--line);
+}
+.home .hero > div {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 2rem 2.25rem;
+}
+.home .hero img { border: 8px solid var(--surface); }
+@media (max-width: 520px) {
+  .home .hero { padding: 2rem 0; }
+  .home .hero > div { padding: 1.25rem; }
+}
