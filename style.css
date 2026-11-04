@@ -113,7 +113,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
   color: var(--ink);
   background: transparent;
 }
-.button.primary { background: var(--amber); border-color: var(--amber); color: var(--bg); }
+.button.primary { background: var(--amber); border-color: var(--amber); color: var(#FFFFFF); }
 .button:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
 .about { max-width: 46em; margin: 0 auto; }
