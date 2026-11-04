@@ -292,7 +292,6 @@ figcaption { font-size: 1rem; line-height: 1.4; color: var(--muted); margin-top:
 }
 
 /* ---------- Home page: background photo behind the intro only ---------- */
-/* To change the photo, upload a new one and update the file name below. */
 body.home { overflow-x: clip; }
 .home main { padding-top: 0; }
 .home .hero {
@@ -309,7 +308,7 @@ body.home { overflow-x: clip; }
   width: 100vw;
   transform: translateX(-50%);
   z-index: -1;
-  background: var(--bg) url("images/home_background.jpg") center / cover no-repeat;
+  background: var(--bg) url("images/background.jpg") center / cover no-repeat;
   border-bottom: 1px solid var(--line);
 }
 .home .hero > div {
