@@ -363,3 +363,14 @@ body.home { overflow-x: clip; }
   box-shadow: 0 4px 14px rgba(30, 35, 31, 0.18);
 }
 .resume-page { max-width: 650px; margin: 0 auto; }
+
+/* Home page: resume preview centered, download button beside it on the left */
+.resume-row { display: grid; grid-template-columns: 1fr minmax(0, 500px) 1fr; gap: 1.5rem; align-items: start; }
+.resume-row .resume-preview { grid-column: 2; grid-row: 1; max-width: none; }
+.resume-row .buttons { grid-column: 1; grid-row: 1; justify-self: end; margin-top: 0; }
+.resume-row .button { white-space: nowrap; }
+@media (max-width: 640px) {
+  .resume-row { grid-template-columns: 1fr; }
+  .resume-row .resume-preview { grid-column: 1; }
+  .resume-row .buttons { grid-column: 1; grid-row: 2; justify-self: start; }
+}
