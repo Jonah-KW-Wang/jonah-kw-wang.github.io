@@ -322,3 +322,11 @@ body.home { overflow-x: clip; }
   .home .hero { padding: 2rem 0; }
   .home .hero > div { padding: 1.25rem; }
 }
+
+/* ---------- Innofiber page: tighter spacing, photo beside text, image shadows ---------- */
+.page-intro { margin-bottom: 1.5rem; }
+.page-intro h1 { margin-bottom: 0.1em; }
+.float-left ~ p { overflow: hidden; }
+.doc-content figure img { box-shadow: 0 4px 14px rgba(30, 35, 31, 0.18); }
+/* Less space between projects (delete this line to go back to the roomier spacing) */
+.doc-content > section { padding-bottom: 2rem; margin-bottom: 2rem; }
