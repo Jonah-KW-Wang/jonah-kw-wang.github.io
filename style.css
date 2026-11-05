@@ -113,7 +113,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
   color: var(--ink);
   background: transparent;
 }
-.button.primary { background: var(--amber); border-color: var(--amber); color: var(#FFFFFF); }
+.button.primary { background: var(--amber); border-color: var(--amber); color: #FFFFFF; }
 .button:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
 .about { max-width: 46em; margin: 0 auto; }
@@ -330,3 +330,18 @@ body.home { overflow-x: clip; }
 .doc-content figure img { box-shadow: 0 4px 14px rgba(30, 35, 31, 0.18); }
 /* Less space between projects (delete this line to go back to the roomier spacing) */
 .doc-content > section { padding-bottom: 2rem; margin-bottom: 2rem; }
+
+/* ---------- Innofiber "My role": photo on the left, text box on the right ---------- */
+.role-layout { display: grid; grid-template-columns: minmax(200px, 300px) 1fr; gap: 2rem; align-items: start; }
+.role-layout figure { margin: 0; }
+.role-text { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1.5rem 1.75rem; }
+.role-text p:last-child { margin-bottom: 0; }
+@media (max-width: 640px) {
+  .role-layout { grid-template-columns: 1fr; }
+  .role-layout figure { max-width: 320px; margin: 0 auto; }
+}
+
+/* ---------- Center the headshot on phones and narrow windows ---------- */
+@media (max-width: 860px) {
+  .hero img { margin-left: auto; margin-right: auto; }
+}
