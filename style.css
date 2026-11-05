@@ -349,7 +349,7 @@ body.home { overflow-x: clip; }
 /* ---------- Home page shadows and bold footer ---------- */
 .home .hero img,
 .home .hero > div,
-.home .facts { box-shadow: 0 4px 14px rgba(30, 35, 31, 0.18); }
+.home .facts { box-shadow: 0 8px 24px rgba(30, 35, 31, 0.24); }
 .site-footer .inner { font-weight: 700; }
 
 /* ---------- Resume image (home page preview and resume page) ---------- */
