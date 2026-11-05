@@ -308,7 +308,7 @@ body.home { overflow-x: clip; }
   width: 100vw;
   transform: translateX(-50%);
   z-index: -1;
-  background: var(--bg) url("images/background.jpg") center / cover no-repeat;
+  background: var(--bg) url("images/background.webp") center / cover no-repeat;
   border-bottom: 1px solid var(--line);
 }
 .home .hero > div {
