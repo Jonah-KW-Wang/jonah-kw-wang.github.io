@@ -351,3 +351,15 @@ body.home { overflow-x: clip; }
 .home .hero > div,
 .home .facts { box-shadow: 0 4px 14px rgba(30, 35, 31, 0.18); }
 .site-footer .inner { font-weight: 700; }
+
+/* ---------- Resume image (home page preview and resume page) ---------- */
+.resume-preview { display: block; max-width: 500px; }
+.resume-preview img,
+.resume-page img {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(30, 35, 31, 0.18);
+}
+.resume-page { max-width: 650px; margin: 0 auto; }
