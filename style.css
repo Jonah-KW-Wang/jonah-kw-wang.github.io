@@ -345,3 +345,9 @@ body.home { overflow-x: clip; }
 @media (max-width: 860px) {
   .hero img { margin-left: auto; margin-right: auto; }
 }
+
+/* ---------- Home page shadows and bold footer ---------- */
+.home .hero img,
+.home .hero > div,
+.home .facts { box-shadow: 0 4px 14px rgba(30, 35, 31, 0.18); }
+.site-footer .inner { font-weight: 700; }
